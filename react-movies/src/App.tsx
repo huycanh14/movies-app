@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+// import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  // khai báo trạng thái - state của react
+  const [myDate, myDateUpdate] = useState(new Date());
+  
+
+  /***
+   * const [state, setstate] = useState(initialState)
+   * - state: tên biến
+   * - setstate: hàm update lại giá trị biến
+   * - initialState: giá trị khởi tạo
+   * useEffect : quản lý các vòng đời của component và nó phục vụ chúng ta sử dụng trong function component thay vì các lifecycle như trước đây trong class component.
+   */
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      myDateUpdate(new Date());
+    }, 100);
+    // làm sách thời gian trước khi thoát
+    return () => clearInterval(intervalId);
+  })
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3> Example HTML</h3>
+      <input type="text" />
+      <div>${myDate.toString()}</div>
     </div>
   );
 }
