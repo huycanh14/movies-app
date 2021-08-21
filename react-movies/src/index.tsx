@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-import Simple from './Simple';
+// import Simple from './Simple';
 import reportWebVitals from './reportWebVitals';
+import ConditionalsIfSeveralComponent from './ConditionalsIfSeveralComponent';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Simple />
+    <ConditionalsIfSeveralComponent />
   </React.StrictMode>,
   document.getElementById('root')
 );
