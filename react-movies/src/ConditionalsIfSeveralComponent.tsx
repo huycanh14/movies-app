@@ -23,7 +23,10 @@ export default function ConditionalsIfSeveralComponent() {
         <>
             <h1>Conditionals If example</h1>
             <div>Rate this website</div>
-            <SelectNumber maxValue={10}/>
+            {/* <SelectNumber maxValue={10} onSelected={ setSelectedRate}/> */}
+            <SelectNumber maxValue={10} onSelected={(value) => {
+                setSelectedRate(value);
+            }}/>
             <div>
                 {displayResult()}
             </div>
